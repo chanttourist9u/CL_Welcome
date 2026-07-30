@@ -27,21 +27,15 @@
   .stage{ position:relative; width:100vw; height:100vh; }
 
   /* ---------- Persistent chrome ---------- */
- .topbar{
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding: 0.5vh 6vw 0 6vw;
-  z-index:10;
-}
-  .logo-img{ width: 46vw; max-width:240px; height:auto; }
-  .clock-block{ text-align:center; margin-top: 1.5vh; }
+  .topbar{
+    position:absolute; top:0; left:0; right:0;
+    display:flex; flex-direction:row; justify-content:space-between; align-items:flex-start;
+    padding: 2vh 5vw 0 5vw; z-index:10;
+  }
+  .logo-img{ width: 40vw; max-width:300px; height:auto; }
+  .clock-block{ text-align:right; }
   .clock{ font-family:'Oswald', sans-serif; font-size:9vw; font-weight:600; letter-spacing:1px; line-height:1; }
-  .date{ font-size:3.1vw; color:var(--muted); letter-spacing:1px; margin-top:1vh; }
+  .date{ font-size:2.6vw; color:var(--muted); letter-spacing:1px; margin-top:1vh; }
 
   /* ---------- Wave motif (from logo) ---------- */
   .wave{
@@ -62,7 +56,7 @@
     display:flex; align-items:center; justify-content:center;
     opacity:0; visibility:hidden;
     transition: opacity 0.9s ease;
-    padding: 34vh 6vw 20vh 6vw;
+    padding: 20vh 6vw 20vh 6vw;
   }
   .slide.active{ opacity:1; visibility:visible; }
 
@@ -252,7 +246,7 @@
   // Set up a sheet the same way as the AIM one, with these keys:
   // tenders_applied, tenders_won, invoices_raised, invoice_value,
   // on_time, finishing_late, wip_no_end_date, bar_scale_max
-  const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrmeItYDJGnjW5K35BoUp8dZ09lRN02ne5fZG6XvIwo97KXpAqh3_o7bSFx1Kd4sjpPs38BS90FWlH/pub?gid=0&single=true&output=csv";
+  const SHEET_CSV_URL = "PASTE_YOUR_PUBLISHED_CSV_URL_HERE";
 
   const DATA_REFRESH_MS = 5 * 60 * 1000;
 
