@@ -295,7 +295,7 @@
     
 
     const scaleMax = parseFloat(data.bar_scale_max) || 40;
-    const bars = ['total_talks', 'topics Covered', 'days_off', 'days_since_last_absence];
+    const bars = ['total_talks', 'topics Covered', 'days_off', 'days_since_last_absence'];
     bars.forEach(key => {
       const raw = parseFloat(data[key]);
       if (isNaN(raw)) return;
