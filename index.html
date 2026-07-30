@@ -28,10 +28,17 @@
 
   /* ---------- Persistent chrome ---------- */
  .topbar{
-  border:2px solid red;
-  padding:0;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding: 2vh 6vw 0 6vw;
+  z-index:10;
 }
-  .logo-img{ width: 46vw; max-width:340px; height:auto; }
+  .logo-img{ width: 46vw; max-width:240px; height:auto; }
   .clock-block{ text-align:center; margin-top: 1.5vh; }
   .clock{ font-family:'Oswald', sans-serif; font-size:9vw; font-weight:600; letter-spacing:1px; line-height:1; }
   .date{ font-size:3.1vw; color:var(--muted); letter-spacing:1px; margin-top:1vh; }
