@@ -181,21 +181,26 @@
   <!-- SLIDE 3: JOB / SCHEDULE STATUS -->
   <div class="slide" data-slide="3">
     <div class="bars-wrap">
-      <div class="bars-title">Project Schedule Status</div>
+      <div class="bars-title">Toolbox Talks</div>
       <div class="bar-row">
-        <div class="bar-label">On Time</div>
-        <div class="bar-track"><div class="bar-fill" id="bar-on_time" style="width:0%; background:var(--orange);"></div></div>
-        <div class="bar-value" id="bar-value-on_time">--</div>
+        <div class="bar-label">Total Talks/div>
+        <div class="bar-track"><div class="bar-fill" id="bar-total_talks" style="width:0%; background:var(--orange);"></div></div>
+        <div class="bar-value" id="bar-value-total_talks">--</div>
       </div>
       <div class="bar-row">
-        <div class="bar-label">Finishing Late</div>
-        <div class="bar-track"><div class="bar-fill" id="bar-finishing_late" style="width:0%; background:#E4432F;"></div></div>
+        <div class="bar-label">Topics Covered</div>
+        <div class="bar-track"><div class="bar-fill" id="bar-topics_covered" style="width:0%; background:#E4432F;"></div></div>
         <div class="bar-value" id="bar-value-finishing_late">--</div>
       </div>
       <div class="bar-row">
-        <div class="bar-label">WIP – No End Date</div>
+        <div class="bar-label">Days lost</div>
         <div class="bar-track"><div class="bar-fill" id="bar-wip_no_end_date" style="width:0%; background:var(--muted);"></div></div>
         <div class="bar-value" id="bar-value-wip_no_end_date">--</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Days since last absence</div>
+        <div class="bar-track"><div class="bar-fill" id="bar-days_since_last_absence" style="width:0%; background:var(--muted);"></div></div>
+        <div class="bar-value" id="bar-days_since_last_absence">--</div>
       </div>
     </div>
   </div>
@@ -256,7 +261,7 @@
   // Set up a sheet the same way as the AIM one, with these keys:
   // tenders_applied, tenders_won, invoices_raised, invoice_value,
   // on_time, finishing_late, wip_no_end_date, bar_scale_max
-  const SHEET_CSV_URL = "PASTE_YOUR_PUBLISHED_CSV_URL_HERE";
+  const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRrmeItYDJGnjW5K35BoUp8dZ09lRN02ne5fZG6XvIwo97KXpAqh3_o7bSFx1Kd4sjpPs38BS90FWlH/pub?gid=0&single=true&output=csv";
 
   const DATA_REFRESH_MS = 5 * 60 * 1000;
 
@@ -285,8 +290,10 @@
     setText('stat-invoices_raised', data.invoices_raised);
     setText('stat-invoice_value', data.invoice_value);
 
+    
+
     const scaleMax = parseFloat(data.bar_scale_max) || 40;
-    const bars = ['on_time', 'finishing_late', 'wip_no_end_date'];
+    const bars = ['total_talks', 'topics Covered', 'days_off', 'days_since_last_absence];
     bars.forEach(key => {
       const raw = parseFloat(data[key]);
       if (isNaN(raw)) return;
